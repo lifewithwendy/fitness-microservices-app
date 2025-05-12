@@ -51,11 +51,10 @@ public class UserService {
 
     public List<UserResponse> getAllProfiles() {
         List<User> users = repository.findAll();
-        if (users.isEmpty()) {
-            throw new RuntimeException("No users found");
-        }
 
-        return users.stream().map(this::assignUser).toList(); // Converts all users
+        return users.stream()
+                .map(this::assignUser)
+                .toList(); // Converts all users
     }
 
 

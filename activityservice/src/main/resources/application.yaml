@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: activityservice
+
+  data:
+    mongodb:
+      uri: mongodb+srv://wendy:wendy@cluster0.uibgf.mongodb.net/
+      database: activities
+      additional-hosts:
+
+
+server:
+  port: 8082
