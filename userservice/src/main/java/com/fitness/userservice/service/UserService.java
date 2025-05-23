@@ -4,12 +4,14 @@ import com.fitness.userservice.dto.RegisterRequest;
 import com.fitness.userservice.dto.UserResponse;
 import com.fitness.userservice.repository.UserRepository;
 import com.fitness.userservice.model.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 
 @Service
+@Slf4j
 public class UserService {
 
     @Autowired
@@ -57,5 +59,8 @@ public class UserService {
                 .toList(); // Converts all users
     }
 
-
+    public Boolean existByUserId(String userId) {
+        log.info("Calling User Validation API for userId : {}", userId);
+        return repository.existsById(userId);
+    }
 }
